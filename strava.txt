@@ -7,3 +7,28 @@ Your Access Token (?)
 Rate Limits (?)	600 requests every 15 minutes, 30000 daily
 
 code=b07db18849d3fa37cc771874d560510a761bf10f
+
+{
+  "access_token": "99c2994556a29905b96eb4197996854041ca47ca",
+  "token_type": "Bearer",
+  "athlete": {
+    "id": 6389292,
+    "username": "yibing_wen",
+    "resource_state": 2,
+    "firstname": "Yibing",
+    "lastname": "Wen",
+    "city": "Montreal",
+    "state": "Quebec",
+    "country": "Canada",
+    "sex": "M",
+    "premium": false,
+    "created_at": "2014-09-11T17:25:35Z",
+    "updated_at": "2018-05-01T17:59:53Z",
+    "badge_type_id": 0,
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/6389292/1947193/3/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/6389292/1947193/3/large.jpg",
+    "friend": null,
+    "follower": null,
+    "email": "wenyibing@gmail.com"
+  }
+}
