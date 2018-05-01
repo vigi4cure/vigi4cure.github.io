@@ -1,0 +1,7 @@
+Category:	Performance Analysis
+Club:	
+Client ID:	API Documentation 25288
+Client Secret:	737adf5d50027f094540580034ca0e8b727c9568 hide
+Your Access Token (?) 
+(permissions: public)	d282686cfcb21ab3a72ceb30303259fbdb648513 hide
+Rate Limits (?)	600 requests every 15 minutes, 30000 daily
