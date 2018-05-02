@@ -69,7 +69,7 @@ def main():
            
     
     for num,j in enumerate(segmentlist):
-        time.sleep(3)
+        time.sleep(1.5)
         segment = retry_get_segment(client,j)
                                 
         try:
