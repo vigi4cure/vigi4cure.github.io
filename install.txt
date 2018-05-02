@@ -1,0 +1,43 @@
+Hey Frank, Yibing,
+
+Sasha tells me you're stepping up to take over Warlords!  Excellent - may the mayham continue!
+
+I've cleaned up the code somewhat (though much clean up, improvements remain).  You can download/fork from:
+
+https://github.com/Josh2K/Josh2K.github.io
+
+Basically its composed of 3 main python3 scripts:
+
+strava_segments.py
+- runs though a list of 2600 segments (segments.csv) and checks the leaderboard among our club to see who is top.  It outputs all the leaders into a big segoutput.csv file.  This segoutput file is the file that map reads and colours.  The colours assigned to each rider is in a file called friend_colour_new.csv
+- It also generates csvs for the segmount count for each member
+(segmentcount.csv) and also appends this segment count to segmentcountovertime.csv for a running tab of who has how many segments.
+- this script also calls another script that compares the segoutput generated with what it was before so generate logs of who took over segments from who.  Any captured segments are writted in warlog.
+You'll have to create a script to read this log and publish new stuff to mattermost.  I have something in my drw github that read this log and published to slack.  Feel free to grab and adapt it,  I don't have access to the DRW github anymore.
+
+note this script takes a LONG time to run (a couple hours) because I had to throttle the requests to strava api doesn't block me.
+
+strava_leaderboard.py
+- scrapes the strava website for the distance totals of all the people in friend_colour_new.csv.  It appends the distance to a file called distance.csv.  This is what is read when plotting the distance over the year
+
+segment_plots.py
+- this script generates all the graphs and plots and saves each one as an HTML file.
+
+
+All the python modules that you need are in requirements.txt.  You can install them all by typing "pip3 install -r requirements.txt" .
+Depending on how to want to set this up, you may want to install these in a virtual environment.
+
+The way I had it set up was a I was running these scripts on an AWS
+EC2 instance,  I have a bash script in the repo that basically downloads the repo from github,  runs the three scripts and then
+commits the changes and uploads back to github.   Github is also where
+I host the website (index.html) so pushing to github is all I have to do to publish the website.  You guys may want to do it differently though.  I had this script set up in cron to run once a day.
+
+You'll need to get a new strava api access key.  You only need public read access.  Its pretty easy to set up a strava app and get an access.  Here's a website that shows you sort of a shortcut to getting the authentication set up:
+
+http://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission/
+
+
+Feel free to give it all a try and let me know if you hit any roadblocks and I'd be happy to help.
+
+See you on the leaderboard!!!!
+
