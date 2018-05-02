@@ -1,3 +1,5 @@
+http://www.strava.com/oauth/authorize?client_id=25288&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=write
+
 Category:	Performance Analysis
 Club:	
 Client ID:	API Documentation 25288
