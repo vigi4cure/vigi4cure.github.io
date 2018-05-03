@@ -56,7 +56,7 @@ def main():
 
     
     club = 202883
-    client = Client(access_token='76824abf6abf903eb3d8b0bde83625135c0be0ec')
+    client = Client(access_token='99c2994556a29905b96eb4197996854041ca47ca')
             
     segoutfile = open('segoutput.csv', 'w')
     segoutfile.write('id,latitude,longitude,name,type,color,segment_name,segment_id,url'+'\n')
