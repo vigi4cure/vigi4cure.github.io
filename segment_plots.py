@@ -8,20 +8,24 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
     
     
     cat_list = df[colour].unique()
-    cat_list = sorted(cat_list, reverse=True)
+    cat_list = sorted(cat_list) #, reverse=True)
+    if filename == 'distance':
+        cat_list.remove('UNCLAIMED')
     
     data=[]
-    
     for item in cat_list:
         x=df.loc[df[colour] == item][x_axis]
         y=df.loc[df[colour] == item][y_axis]
-        
         
         try:
         	friend_colour = '#'+str(friend_df.loc[friend_df['name'] == item,'colour'].values[0])
         except:
         	friend_colour = '#646464'
-        
+         
+        latest_y = int(y[y.index[-1]])
+        if filename == 'distance':
+            item = format(latest_y, '04d') + ' ' + item
+
         trace = go.Scatter(
             x=x,
             y=y,
@@ -30,15 +34,22 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
             fill=fill,
             fillcolor = friend_colour,
             line=dict(color = friend_colour)
-           
-            )
-        data.append(trace) 
+        )
+        if filename == 'distance' and len(data) != 0:
+            for i in range(len(data)):
+                dis = data[i]['y'][data[i]['y'].index[-1]]
+                if latest_y > dis:
+                  data.insert(i, trace)
+                  break
+            else:
+                data.append(trace) 
+        else:
+            data.append(trace) 
     
     layout = go.Layout( 
         xaxis = {'title': x_axis},
         yaxis = {'title': y_axis},
         legend = {'x': 100}
-      
     )
 
     fig = go.Figure(data=data, layout=layout)
