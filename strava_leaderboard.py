@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import datetime
 import pandas as pd
 import time
-from stravalib.client import Client
+# from stravalib.client import Client
 import requests
 
 def fetch_data(row,now):
