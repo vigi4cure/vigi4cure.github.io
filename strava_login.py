@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import requests
+import requests, re
 
 def find_between( s, first, last ):
     try:
@@ -38,9 +38,15 @@ print(r)
 # with open('../../html/s8s.com.html', 'w') as f:
     # f.write(r.content.decode("utf-8"))
 
-r = session.get('https://www.strava.com/athletes/14749152/goals/goals_sidebar')
-print(r)
-with open('../../html/sb.html', 'w') as f:
-    f.write(r.content.decode("utf-8"))
+seg_list = open('segments_all.csv', 'w')
+seg_list.write('Segment Id\n')
+for i in range(1,334):
+    r = session.get('https://www.strava.com/segments/search?utf8=✓&filter_type=cycling&keywords=&min-cat=0&max-cat=5&terrain=all&page=' + str(i))
+    print(r)
+    b = re.findall('href="/segments/[0-9]+',r.content.decode("utf-8"))
+    c = [ x.replace('href="/segments/', '') for x in b]
+    print(len(c))
+    seg_list.write('\n'.join(c))
+seg_list.close()
 
 

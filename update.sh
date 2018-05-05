@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd ~/vigi4cure.github.io
+#cd ~/vigi4cure.github.io
+cd /home/vgoobm/Tools/Misc/vigi4cure.github.io
 
 /usr/bin/git pull
 /usr/bin/python3 segment_plots.py
