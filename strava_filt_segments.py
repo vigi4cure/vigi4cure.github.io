@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import
+import csv, time
 from stravalib.client import Client
 from retrying import retry
 
@@ -33,7 +33,10 @@ def main():
 
     # friend_count_dict = {}
 
-
+    segoutfile = open('segments_details.csv', 'w')
+    segoutfile.write('id,latitude,longitude,name,type,color,segment_name,segment_id,url'+'\n')
+    
+    box = [[45.719182 , -74.023017], [45.380184 ,  -73.436622]]
     for num,j in enumerate(segmentlist):
         print(num)
         segment = retry_get_segment(client,j)
@@ -47,7 +50,7 @@ def main():
             # else:
                 # topguy = leaderboard[0].athlete_name
 
-                topguy_id = leaderboard[0].athlete_id
+                # topguy_id = leaderboard[0].athlete_id
 
 
             # if not topguy in friend_df['shortname'].values:
