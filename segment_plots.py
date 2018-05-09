@@ -5,8 +5,6 @@ import plotly.graph_objs as go
 import pandas as pd
 
 def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):  
-    
-    
     cat_list = df[colour].unique()
     cat_list = sorted(cat_list) #, reverse=True)
     if filename == 'distance':
@@ -24,6 +22,10 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
          
         latest_y = int(y[y.index[-1]])
         if filename == 'distance':
+            try:
+                item = str(df.loc[df[colour] == item, 'sport'].values[-1]) + item
+            except:
+                pass
             item = format(latest_y, '04d') + ' ' + item
 
         trace = go.Scatter(
