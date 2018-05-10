@@ -1,0 +1,27 @@
+name,id,colour,shortname
+UNCLAIMED,0,000000,UNCLAIMED
+Marc Devlin,8669256,2A4BD7,Marc D.
+Josh Felker,5991862,A03D3D,Josh F.
+Yibing Wen,6389292,8126C0,Yibing W.
+Arvind Ramanathan,6145638,646464,Arvind R.
+Mario Born,8678667,FF9233,Mario B.
+Sasha Wloski,6394270,FFEE33,Sasha W.
+Frank Oduro,9035765,FFCDF3,Frank O.
+Avalon Powell,8707893,646450,Avalon P.
+Mathieu GagnÃ©,9041359,646430,Mathieu G.
+Vitor Lima,14749152,B7E628,Vitor L.
+Vincent Trudel-Lapierre,12032937,DAFEFA,Vincent T.
+Leila H,15015386,FBEFAE,Leila H.
+Henry Jenkins ðŸš€,2021048,F72304,Henry J.
+Diwakar R,16781921,29C0C0,Diwakar R.
+Mo Baakoe,15589210,646410,Mo B.
+Tengfei Han,9351833,646390,Tengfei H.
+Antoine Duplantie-Grenier,9541900,646370,Antoine D.
+Michael Burkat,14747046,C7258E,Michael B.
+Eoin Craigie,9690910,5CB1E4,Eoin C.
+Cameron Mackey,21276879,1D6914,Cameron M.
+Sandeep Bharadwaj,23052959,646350,Sandeep B.
+Yang Gao,21090937,646330,Yang G.
+Kelsey Comstock,22142459,646310,Kelsey C.
+Steve Sulpizio,8671749,646290,Steve S.
+Mike Sants,8586561,646270,Mike S.
