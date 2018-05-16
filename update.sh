@@ -4,8 +4,8 @@
 echo cd /home/vgoobm/Tools/Misc/vigi4cure.github.io
 cd /home/vgoobm/Tools/Misc/vigi4cure.github.io
 
-echo /usr/bin/git pull
-/usr/bin/git pull
+# echo /usr/bin/git pull
+# /usr/bin/git pull
 echo /usr/bin/python3 strava_leaderboard.py
 /usr/bin/python3 strava_leaderboard.py
 echo /usr/bin/python3 segment_plots.py
