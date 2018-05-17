@@ -1,4 +1,7 @@
 ﻿datetime,name,distance,sport
+2018-01-01,Thad Murillo,0.0,
+2018-01-01,Rene Duquesnoy,0.0,
+2018-01-01,Kelsey Comstock,0.0,
 2018-01-01,Yibing Wen,0.0,
 2018-01-01,Sasha Wloski,0.0,
 2018-01-01,Arvind Ramanathan,0.0,
@@ -438,7 +441,6 @@
 2018-05-03,Cameron Mackey,0.0,
 2018-05-03,Sandeep Bharadwaj,0.0,
 2018-05-03,Yang Gao,0.0,
-2018-05-03,Kelsey Comstock,79.7,
 2018-05-04,UNCLAIMED,0.0,
 2018-05-04,Marc Devlin,0.0,
 2018-05-04,Josh Felker,5.1,
@@ -462,7 +464,6 @@
 2018-05-04,Cameron Mackey,0.0,
 2018-05-04,Sandeep Bharadwaj,0.0,
 2018-05-04,Yang Gao,0.0,
-2018-05-04,Kelsey Comstock,79.7,
 2018-05-04,UNCLAIMED,0.0,
 2018-05-04,Marc Devlin,0.0,
 2018-05-04,Josh Felker,5.1,
@@ -486,7 +487,6 @@
 2018-05-04,Cameron Mackey,0.0,
 2018-05-04,Sandeep Bharadwaj,0.0,
 2018-05-04,Yang Gao,0.0,
-2018-05-04,Kelsey Comstock,79.7,
 2018-05-04,UNCLAIMED,0.0,
 2018-05-04,Marc Devlin,0,
 2018-05-04,Josh Felker,5,
@@ -510,7 +510,6 @@
 2018-05-04,Cameron Mackey,0,
 2018-05-04,Sandeep Bharadwaj,0,
 2018-05-04,Yang Gao,0.0,
-2018-05-04,Kelsey Comstock,79,
 2018-05-04,UNCLAIMED,0.0,
 2018-05-04,Marc Devlin,0,
 2018-05-04,Josh Felker,5,
@@ -534,7 +533,6 @@
 2018-05-04,Cameron Mackey,0,
 2018-05-04,Sandeep Bharadwaj,0,
 2018-05-04,Yang Gao,0.0,
-2018-05-04,Kelsey Comstock,79,
 2018-05-05,UNCLAIMED,0.0,
 2018-05-05,Marc Devlin,0,
 2018-05-05,Josh Felker,5,
@@ -558,7 +556,6 @@
 2018-05-05,Cameron Mackey,0,
 2018-05-05,Sandeep Bharadwaj,0,
 2018-05-05,Yang Gao,0.0,
-2018-05-05,Kelsey Comstock,79,
 2018-05-05,UNCLAIMED,0.0,
 2018-05-05,Marc Devlin,0,
 2018-05-05,Josh Felker,9,
@@ -582,7 +579,6 @@
 2018-05-05,Cameron Mackey,0,
 2018-05-05,Sandeep Bharadwaj,0,
 2018-05-05,Yang Gao,0.0,
-2018-05-05,Kelsey Comstock,79,
 2018-05-05,UNCLAIMED,0.0,
 2018-05-05,Marc Devlin,0,
 2018-05-05,Josh Felker,15,
@@ -606,7 +602,6 @@
 2018-05-05,Cameron Mackey,0,
 2018-05-05,Sandeep Bharadwaj,0,
 2018-05-05,Yang Gao,0.0,
-2018-05-05,Kelsey Comstock,79,
 2018-05-06,UNCLAIMED,0.0,
 2018-05-06,Marc Devlin,0,
 2018-05-06,Josh Felker,15,
@@ -630,7 +625,6 @@
 2018-05-06,Cameron Mackey,0,
 2018-05-06,Sandeep Bharadwaj,0,
 2018-05-06,Yang Gao,0.0,
-2018-05-06,Kelsey Comstock,79,
 2018-05-06,UNCLAIMED,0.0,
 2018-05-06,Marc Devlin,0,
 2018-05-06,Josh Felker,15,
@@ -654,7 +648,6 @@
 2018-05-06,Cameron Mackey,0,
 2018-05-06,Sandeep Bharadwaj,0,
 2018-05-06,Yang Gao,0.0,
-2018-05-06,Kelsey Comstock,79,
 2018-05-07,UNCLAIMED,0.0,
 2018-05-07,Marc Devlin,0,
 2018-05-07,Josh Felker,15,
@@ -678,7 +671,6 @@
 2018-05-07,Cameron Mackey,0,
 2018-05-07,Sandeep Bharadwaj,0,
 2018-05-07,Yang Gao,0.0,
-2018-05-07,Kelsey Comstock,79,
 2018-05-07,UNCLAIMED,0.0,
 2018-05-07,Marc Devlin,0,
 2018-05-07,Josh Felker,15,
@@ -702,7 +694,6 @@
 2018-05-07,Cameron Mackey,0
 2018-05-07,Sandeep Bharadwaj,0
 2018-05-07,Yang Gao,0.0
-2018-05-07,Kelsey Comstock,79
 2018-05-08,UNCLAIMED,0.0,🏃
 2018-05-08,Marc Devlin,0,🚲
 2018-05-08,Josh Felker,15,🚲
@@ -726,7 +717,6 @@
 2018-05-08,Cameron Mackey,0,🚲
 2018-05-08,Sandeep Bharadwaj,0,🚲
 2018-05-08,Yang Gao,0.0,🏃
-2018-05-08,Kelsey Comstock,79,🏃
 2018-05-08,UNCLAIMED,0.0,🏃
 2018-05-08,Marc Devlin,0,🚲
 2018-05-08,Josh Felker,15,🚲
@@ -750,7 +740,6 @@
 2018-05-08,Cameron Mackey,0,🚲
 2018-05-08,Sandeep Bharadwaj,0,🚲
 2018-05-08,Yang Gao,0.0,🏃
-2018-05-08,Kelsey Comstock,79,🏃
 2018-05-09,UNCLAIMED,0.0,🏃
 2018-05-09,Marc Devlin,0,🚲
 2018-05-09,Josh Felker,15,🚲
@@ -1120,4 +1109,33 @@
 2018-05-16,Mike Sants,87,🚲
 2018-05-16,Jie Yu,1,🚲
 2018-05-16,Rene Duquesnoy,758.0,🏃
+2018-05-16,Thad Murillo,1575.0,🚲
+2018-05-16,UNCLAIMED,0.0,🏃
+2018-05-16,Marc Devlin,46,🚲
+2018-05-16,Josh Felker,15,🚲
+2018-05-16,Yibing Wen,824,🚲
+2018-05-16,Arvind Ramanathan,8,🚲
+2018-05-16,Mario Born,209,🚲
+2018-05-16,Sasha Wloski,677,🚲
+2018-05-16,Frank Oduro,43,🚲
+2018-05-16,Avalon Powell,0,🚲
+2018-05-16,Mathieu Gagné,0,🚲
+2018-05-16,Vitor Lima,109,🚲
+2018-05-16,Vincent Trudel-Lapierre,0,🏃
+2018-05-16,Leila H,0,🚲
+2018-05-16,Henry Jenkins 🚀,424,🚲
+2018-05-16,Diwakar R,0,🚲
+2018-05-16,Mo Baakoe,0,🚲
+2018-05-16,Tengfei Han,0,🚲
+2018-05-16,Antoine Duplantie-Grenier,0,🏃
+2018-05-16,Michael Burkat,0,🚲
+2018-05-16,Eoin Craigie,1413,🏃
+2018-05-16,Cameron Mackey,0,🚲
+2018-05-16,Sandeep Bharadwaj,0,🚲
+2018-05-16,Yang Gao,0.0,🏃
+2018-05-16,Kelsey Comstock,35,🚲
+2018-05-16,Steve Sulpizio,0,🚲
+2018-05-16,Mike Sants,87,🚲
+2018-05-16,Jie Yu,1,🚲
+2018-05-16,Rene Duquesnoy,767.0,🏃
 2018-05-16,Thad Murillo,1575.0,🚲
