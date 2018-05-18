@@ -3,11 +3,14 @@
 import plotly
 import plotly.graph_objs as go
 import pandas as pd
+from datetime import datetime 
 
 def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):  
     cat_list = df[colour].unique()
     cat_list = sorted(cat_list) #, reverse=True)
-    if filename == 'distance':
+    year = ''
+    if filename == 'distance' or filename == 'elevation_gain':
+        year = '_' + str(datetime.now().year)
         cat_list.remove('UNCLAIMED')
     
     data=[]
@@ -21,7 +24,7 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
         	friend_colour = '#646464'
          
         latest_y = int(y[y.index[-1]])
-        if filename == 'distance':
+        if filename == 'distance' or filename == 'elevation_gain':
             try:
                 item = str(df.loc[df[colour] == item, 'sport'].values[-1]) + item
             except:
@@ -37,7 +40,7 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
             fillcolor = friend_colour,
             line=dict(color = friend_colour)
         )
-        if filename == 'distance' and len(data) != 0:
+        if (filename == 'distance' or filename == 'elevation_gain') and len(data) != 0:
             for i in range(len(data)):
                 dis = data[i]['y'][data[i]['y'].index[-1]]
                 if latest_y > dis:
@@ -49,13 +52,14 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
             data.append(trace) 
     
     layout = go.Layout( 
-        xaxis = {'title': x_axis},
-        yaxis = {'title': y_axis},
+        xaxis = {'title': x_axis },
+        yaxis = {'title': display},
         legend = {'x': 100}
     )
 
     fig = go.Figure(data=data, layout=layout)
-    plotly.offline.plot(fig, filename=filename+'_plot.html',auto_open=False)
+    
+    plotly.offline.plot(fig, filename=filename+'_plot' + year + '.html',auto_open=False)
     return
 
 def Bar_Plot(df,colour,x_axis,y_axis,mode,display,fill,filename):  
@@ -114,7 +118,14 @@ Scatter_Plot2(df_cumsum,'name','date','count','lines','count','tozeroy','stacked
 df_snapshot = pd.read_csv('segmentcount.csv')
 Bar_Plot(df_snapshot,'name','date','count','lines','count','tozeroy','segment_count_snapshot')
 
+year = str(datetime.now().year)
+
 #distance list graph:
 #line graph of segments over time:
-df_distance = pd.read_csv('distance.csv')
+df_distance = pd.read_csv('distance_' + year + '.csv')
 Scatter_Plot2(df_distance,'name','datetime','distance','lines','distance','','distance')
+
+#distance list graph:
+#line graph of segments over time:
+df_elevation_gain = pd.read_csv('elevation_gain_' + year + '.csv')
+Scatter_Plot2(df_elevation_gain,'name','datetime','elevation gain','lines','Elevation Gain(meter)','','elevation_gain')
