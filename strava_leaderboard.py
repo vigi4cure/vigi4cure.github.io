@@ -37,7 +37,7 @@ def cleanconvert(friend_distance_raw):
 
     elif re.search(r'mi',friend_distance_raw):
         friend_distance_raw = friend_distance_raw[:-2]
-        riend_distance_raw = re.sub("[^\d\.\-]", "", friend_distance_raw)
+        friend_distance_raw = re.sub("[^\d\.\-]", "", friend_distance_raw)
         friend_distance_raw = float(friend_distance_raw) * 1.609344
 
     friend_distance_raw = round(friend_distance_raw,0)
@@ -54,7 +54,7 @@ def main():
         outputlist.append(fetch_data(row,now))
        
     
-    outfile = open('distance.csv', 'a+')
+    outfile = open('distance_' + str(datetime.datetime.now().year) + '.csv', 'a+')
     for s in outputlist:
         outfile.write(s)
         
