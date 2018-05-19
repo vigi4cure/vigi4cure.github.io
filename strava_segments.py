@@ -37,9 +37,9 @@ def retry_get_segment(client,j):
     return client.get_segment(j)
 
 @retry(wait_exponential_multiplier=1000, wait_exponential_max=10000, stop_max_delay=30000)
-def retry_get_leaderboard(client,j,club):
-    return client.get_segment_leaderboard(j,club_id=club)
-
+def retry_get_leaderboard(client,j,club,timeframe=None):
+    #timeframe='this_year'
+    return client.get_segment_leaderboard(j,club_id=club,timeframe=timeframe)
  
 def main():
     #reload(sys)  
