@@ -37,16 +37,17 @@ def retry_get_segment(client,j):
     return client.get_segment(j)
 
 @retry(wait_exponential_multiplier=1000, wait_exponential_max=10000, stop_max_delay=30000)
-def retry_get_leaderboard(client,j,club):
-    return client.get_segment_leaderboard(j,club_id=club)
-
+def retry_get_leaderboard(client,j,club,timeframe='this_year'):
+    #timeframe='this_year'
+    #timeframe=None
+    return client.get_segment_leaderboard(j,club_id=club,timeframe=timeframe)
  
 def main():
     #reload(sys)  
     #sys.setdefaultencoding('utf8')
     
-    df1 = pd.read_csv('segoutput.csv',index_col=False)
-    df1 = df1.set_index(['segment_id'])
+    # df1 = pd.read_csv('segoutput_thisyear.csv',index_col=False)
+    # df1 = df1.set_index(['segment_id'])
     
     segmentlist = []
     file = open('segments.csv')
@@ -58,9 +59,9 @@ def main():
     club = 202883
     client = Client(access_token='99c2994556a29905b96eb4197996854041ca47ca')
             
-    segoutfile = open('segoutput.csv', 'w')
+    segoutfile = open('segoutput_thisyear.csv', 'w')
     segoutfile.write('id,latitude,longitude,name,type,color,segment_name,segment_id,url'+'\n')
-    segoutputlist = []
+    # segoutputlist = []
 
     
     friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)
@@ -125,23 +126,23 @@ def main():
     
 
     #segment count over time output
-    segcountovertimefile = open('segmentcountovertime.csv', 'a+')
+    segcountovertimefile = open('segmentcountovertime_thisyear.csv', 'a+')
     nowdate = datetime.datetime.now().strftime('%Y-%m-%d')
     for x in friend_count_dict:
         if x != 'UNCLAIMED':
             segcountovertimefile.write(str(nowdate)+','+str(friend_df.loc[friend_df['shortname'] == x,'name'].values[0])+','+str(friend_df.loc[friend_df['shortname'] == x,'colour'].values[0])+','+str(friend_count_dict[x])+'\n')
     segcountovertimefile.close()
     
-    time.sleep(5)
+    # time.sleep(5)
     
-    #read newly created segoutput.csv (df2) and compare it to original (df1):
-    df2 = pd.read_csv('segoutput.csv',index_col=False)
-    df2 = df2.set_index(['segment_id'])  
-    try:
-        main_logger(df2,df1)
-    except Exception as e:
-        print('Error: '+str(e))
-        pass
+    #read newly created segoutput_thisyear.csv (df2) and compare it to original (df1):
+    # df2 = pd.read_csv('segoutput_thisyear.csv',index_col=False)
+    # df2 = df2.set_index(['segment_id'])  
+    # try:
+        # main_logger(df2,df1)
+    # except Exception as e:
+        # print('Error: '+str(e))
+        # pass
     
                      
 
