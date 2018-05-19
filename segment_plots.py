@@ -123,7 +123,7 @@ year = str(datetime.now().year)
 #distance list graph:
 #line graph of segments over time:
 df_distance = pd.read_csv('distance_' + year + '.csv')
-Scatter_Plot2(df_distance,'name','datetime','distance','lines','distance','','distance')
+Scatter_Plot2(df_distance,'name','datetime','distance','lines','Distance(km)','','distance')
 
 #distance list graph:
 #line graph of segments over time:
