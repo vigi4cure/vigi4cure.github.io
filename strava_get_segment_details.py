@@ -9,18 +9,21 @@ def retry_get_segment(client,j):
     return client.get_segment(j)
 
 def main():
-    keywords = 'Brossard'
+    # keywords = 'Brossard'
     segmentlist = []
-    file = open('segments_%s.csv'%keywords)
+    # file = open('segments_%s.csv'%keywords)
+    file = open('segments.csv')
     reader = csv.DictReader(file)
     for line in reader:
         segmentlist.append(line["Segment Id"])
 
     client = Client(access_token='99c2994556a29905b96eb4197996854041ca47ca')
-    segoutfile = open('segment_%s_details.csv'%keywords, 'w')
+    # segoutfile = open('segment_%s_details.csv'%keywords, 'w')
+    segoutfile = open('segment_details.csv', 'w')
     segoutfile.write('id,segment_id,segment_name,resource_state,start_latitude,start_longitude,end_latitude,end_longitude'+'\n')
 
-    segbad = open('segment_%s_bad.csv'%keywords, 'w')
+    # segbad = open('segment_%s_bad.csv'%keywords, 'w')
+    segbad = open('bad_segments.csv', 'w')
     segbad.write('Segment ID\n')
 
     # box = [[45.719182 , -74.023017], [45.380184 ,  -73.436622]]
@@ -46,4 +49,3 @@ def main():
 
 if __name__ == "__main__":
   main()
-
