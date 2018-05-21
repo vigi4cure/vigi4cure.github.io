@@ -55,17 +55,21 @@
 	L.mapbox.accessToken = 'pk.eyJ1IjoiemV0dGVyIiwiYSI6ImVvQ3FGVlEifQ.jGp_PWb6xineYqezpSd7wA';
     map = L.mapbox.map('map', 'zetter.i73ka9hn')
       .fitBounds(box);
-    var sPageURL = window.location.search.substring(1);
-    if (sPageURL == 'thisyear' || sPageURL == 'this_year') {
-        document.getElementById("map_url").innerHTML = "<a href='/'>Show All The Time</a>";
-        url = './segoutput_this_year.csv';
-    } else {
-        document.getElementById("map_url").innerHTML = "<a href='?thisyear'>Show This Year Only</a>";
-        url = './segoutput.csv';
-    }
 
-    //initialSelection = d3.set(['UNCLAIMED','Josh Felker', 'Arvind Ramanathan','Mario Born','Marc Devlin','Yibing Wen','Frank Oduro','Avalon Powell','Sasha Wloski','Mathieu Gagné','Eoin Craigie','Vitor Lima','Vincent Trudel-Lapierre','Leila H','Henry Jenkins 🚀','Mo Baakoe','Diwakar R','Tengfei Han','Antoine Duplantie-Grenier','Michael Burkat','Sandeep Bharadwaj','Cameron Mackey']);
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    url = './segoutput_this_year.csv';
+    //voronoiMap(map, url, undefined);
+    
+    
+    setTimeout(function myFunction() {
+    url = './segoutput.csv';
+    alert('Hello');
     voronoiMap(map, url, undefined);
+}, 3000)
+    //url = './segoutput.csv';
+    //voronoiMap(map, url, undefined);
   </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
