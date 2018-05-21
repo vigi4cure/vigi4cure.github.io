@@ -41,15 +41,14 @@ def main():
     #reload(sys)  
     #sys.setdefaultencoding('utf8')
     
-    # df1 = pd.read_csv('segoutput.csv',index_col=False)
-    # df1 = df1.set_index(['segment_id'])
+    df1 = pd.read_csv('segoutput.csv',index_col=False)
+    df1 = df1.set_index(['segment_id'])
     
-    # segmentlist = []
-    # file = open('segments.csv')
-    # reader = csv.DictReader(file)
-    # for line in reader:
-        # segmentlist.append(line["Segment Id"])
-        
+    segmentlist = []
+    file = open('segments.csv')
+    reader = csv.DictReader(file)
+    for line in reader:
+        segmentlist.append(line["Segment Id"])
 
     
     club = 202883
