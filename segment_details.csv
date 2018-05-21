@@ -1,4 +1,4 @@
-id,segment_id,segment_name,resource_state,start_latitude,start_longitude,end_latitude,end_longitude
+no,id,segment_name,resource_state,start_latitude,start_longitude,end_latitude,end_longitude
 0,3655223,"Boul. Pincourt hill",3,45.38522983901203,-73.97012575529516,45.38224395364523,-73.96594427525997
 1,4373377,"Pincourt Punch",3,45.384464,-73.968663,45.381321,-73.965436
 2,8840701,"Full fat loop",3,45.384433,-73.966737,45.384568,-73.966938
