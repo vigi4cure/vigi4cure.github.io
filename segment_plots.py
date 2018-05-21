@@ -118,6 +118,10 @@ Scatter_Plot2(df_cumsum,'name','date','count','lines','count','tozeroy','stacked
 df_snapshot = pd.read_csv('segmentcount.csv')
 Bar_Plot(df_snapshot,'name','date','count','lines','count','tozeroy','segment_count_snapshot')
 
+#bar graph of current segment count snapshot for this year:
+df_snapshot_this_year = pd.read_csv('segmentcount_this_year.csv')
+Bar_Plot(df_snapshot_this_year,'name','date','count','lines','count','tozeroy','segment_count_snapshot_this_year')
+
 year = str(datetime.now().year)
 
 #distance list graph:
