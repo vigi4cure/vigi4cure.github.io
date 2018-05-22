@@ -3,11 +3,12 @@
 import re
 import sys
 import csv
-from stravalib.client import Client
-from retrying import retry
 import time
 import datetime
 import pandas as pd
+from retrying import retry
+from shutil import copyfile
+from stravalib.client import Client
 from WarReportLogger import main_logger
 
 def segment_details(num,segment,topguy,friend_df):
@@ -91,6 +92,10 @@ def main(argv):
         time.sleep(1.5) #Strava limit 600/15mins
 
     segoutfile.close()
+    
+    now = datetime.datetime.now().strftime("%Y%m%d-%H%M")
+    copyfile(segoutput, 'segment_history/' + segoutput.replace('.csv', '_' + now + '.csv'))
+    
     friend_df.to_csv('friend_colour_new.csv', index=False)
 
     #segment count output
