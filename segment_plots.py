@@ -30,6 +30,8 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
             except:
                 pass
             item = format(latest_y, '04d') + ' ' + item
+        elif 'segments_over_time' in filename:
+            item = format(latest_y, '03d') + ' ' + item
 
         trace = go.Scatter(
             x=x,
@@ -40,7 +42,9 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
             fillcolor = friend_colour,
             line=dict(color = friend_colour)
         )
-        if (filename == 'distance' or filename == 'elevation_gain') and len(data) != 0:
+        if (filename == 'distance' or 
+            filename == 'elevation_gain' or 
+            'segments_over_time' in filename) and len(data) != 0:
             for i in range(len(data)):
                 dis = data[i]['y'][data[i]['y'].index[-1]]
                 if latest_y > dis:
@@ -106,6 +110,10 @@ friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)
 #line graph of segments over time:
 df = pd.read_csv('segmentcountovertime.csv')
 Scatter_Plot2(df,'name','date','count','lines','count','','segments_over_time')
+
+#line graph of segments over time - this_year:
+df = pd.read_csv('segmentcountovertime_this_year.csv')
+Scatter_Plot2(df,'name','date','count','lines','count','','segments_over_time_this_year')
 
 #stacked graph of segments over time:
 df_cumsum = df.groupby(by=['date','name']).max().groupby(level=[0]).cumsum()['count']
