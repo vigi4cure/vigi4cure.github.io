@@ -25,7 +25,7 @@ def fetch_data(row,now):
             friend_distance_raw = row.find('td').text
             friend_distance = cleanconvert(friend_distance_raw)
             break
-    print(str(now)+' '+friend_name+' - '+str(friend_distance))
+    print(str(now), ' ', friend_name, ' - ', str(friend_distance))
     output_string = str(now) + ',' + str(friend_name) + ',' + str(friend_distance) + ',' + sport
     return(output_string)
 
@@ -59,7 +59,7 @@ def main():
         outfile.write(s)
         
         outfile.write('\n')
-    print(str(now)+'  :  ACTION:    new data added to '+outfile.name)
+    print(str(now), '  :  ACTION:    new data added to ', outfile.name)
     outfile.close()
 
 if __name__ == "__main__":

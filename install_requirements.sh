@@ -3,5 +3,7 @@ sudo -H pip3 install pandas --no-build-isolation
 sudo -H pip3 install stravalib
 sudo -H pip3 install plotly
 sudo -H pip3 install retrying --ignore-installed six
+sudo -H pip3 install mattermostdriver
+sudo -H pip3 install --upgrade requests --ignore-installed urllib3
 
 

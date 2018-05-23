@@ -35,7 +35,7 @@ while True:
     print(r)
     b = re.findall('href="/segments/[0-9]+',r.content.decode("utf-8"))
     c = [ x.replace('href="/segments/', '') for x in b]
-    print(str(i) + ':' + str(len(c)))
+    print(str(i), ':', str(len(c)))
     if len(c) < 2:
         break;
     seg_list.write('\n'.join(c) + '\n')
