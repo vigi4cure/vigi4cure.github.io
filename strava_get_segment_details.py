@@ -40,7 +40,7 @@ def main():
                                                             seg.end_latitude,
                                                             seg.end_longitude))
         except Exception as e:
-            print(str(j) + ':' + str(e))
+            print(str(j), ':', str(e))
             segbad.write(str(j) + '\n')
         time.sleep(1.5)
 

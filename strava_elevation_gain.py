@@ -25,7 +25,7 @@ def fetch_data(row,now):
             elevation_gain_raw = row.find('td').text
             elevation_gain = cleanconvert(elevation_gain_raw)
             break
-    print(str(now)+' '+friend_name+' - '+str(elevation_gain))
+    print(str(now), ' ', friend_name, ' - ', str(elevation_gain))
     output_string = str(now) + ',' + str(friend_name) + ',' + str(elevation_gain) + ',' + sport
     return(output_string)
 
@@ -56,7 +56,7 @@ def main():
     outfile = 'elevation_gain_' + str(datetime.datetime.now().year) + '.csv'
     with open(outfile, 'a+') as f:
         f.write('\n'.join(outputlist) + '\n')
-    print(str(now) + '  :  ACTION:    new data added to ' + outfile)
+    print(str(now), '  :  ACTION:    new data added to ', outfile)
 
 if __name__ == "__main__":
   main()

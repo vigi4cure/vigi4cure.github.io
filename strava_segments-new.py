@@ -27,7 +27,7 @@ def segment_details(num,segment,topguy,friend_df):
 
     tuple=(str(num),str(start_latitude),str(start_longitude),str(segment_name)+':  ['+str(topguy_fullname)+']',str(topguy_fullname),str(colour),str(segment_name),str(segment_id),str(url))
     now = datetime.datetime.now().strftime('%Y-%m-%d')
-    print('\r'+str(now)+': ID: '+str(id)+'     Segment ID:  '+str(segment_id)+'   Owner:  '+str(topguy_fullname),)
+    print('\r', str(now), ': ID: ', str(id), '     Segment ID:  ', str(segment_id), '   Owner:  ', str(topguy_fullname),)
     return tuple
 
 @retry(wait_exponential_multiplier=1000, wait_exponential_max=10000, stop_max_delay=30000)
@@ -35,19 +35,19 @@ def retry_get_leaderboard(client,j,club,timeframe=None):
     return client.get_segment_leaderboard(j,club_id=club,timeframe=timeframe)
 
 def main(argv):
-    if len(argv) == 1:
-        print('read segoutput.csv')
-        df1 = pd.read_csv('segoutput.csv',index_col=False)
-        df1 = df1.set_index(['segment_id'])
-
-    club = 202883
-    client = Client(access_token='99c2994556a29905b96eb4197996854041ca47ca')
-
-    timeframe=None
+    timeframe = None
     segoutput = 'segoutput.csv'
     if len(argv) > 1:
         timeframe = argv[1]
         segoutput = 'segoutput_' + argv[1] + '.csv'
+
+    print('read ' + segoutput)
+    df1 = pd.read_csv(segoutput, index_col=False)
+    df1 = df1.set_index(['segment_id'])
+
+    club = 202883
+    client = Client(access_token='99c2994556a29905b96eb4197996854041ca47ca')
+
     segoutfile = open(segoutput, 'w')
     segoutfile.write('id,latitude,longitude,name,type,color,segment_name,segment_id,url'+'\n')
     segoutputlist = []
@@ -106,7 +106,7 @@ def main(argv):
     segcountoutfile.write('name,colour,count'+'\n')
     for x in friend_count_dict:
         if x != 'UNCLAIMED':
-            print(str(x)+': '+str(friend_count_dict[x]))
+            print(str(x), ': ', str(friend_count_dict[x]))
             segcountoutfile.write(str(friend_df.loc[friend_df['shortname'] == x,'name'].values[0])+','+str(friend_df.loc[friend_df['shortname'] == x,'colour'].values[0])+','+str(friend_count_dict[x])+'\n')
     segcountoutfile.write('\n')
     segcountoutfile.close()
@@ -122,19 +122,15 @@ def main(argv):
             segcountovertimefile.write(str(nowdate)+','+str(friend_df.loc[friend_df['shortname'] == x,'name'].values[0])+','+str(friend_df.loc[friend_df['shortname'] == x,'colour'].values[0])+','+str(friend_count_dict[x])+'\n')
     segcountovertimefile.close()
 
-    if len(argv) == 1:
-        print("To mattermost")
-        
-        time.sleep(5)
-
-        #read newly created segoutput.csv (df2) and compare it to original (df1):
-        df2 = pd.read_csv('segoutput.csv',index_col=False)
-        df2 = df2.set_index(['segment_id'])
-        try:
-            main_logger(df2,df1)
-        except Exception as e:
-            print('Error: '+str(e))
-            pass
+    #read newly created segoutput.csv (df2) and compare it to original (df1):
+    # time.sleep(5)
+    # df2 = pd.read_csv(segoutput, index_col=False)
+    # df2 = df2.set_index(['segment_id'])
+    # try:
+        # main_logger(df2, df1, timeframe)
+    # except Exception as e:
+        # print('Error: ', str(e))
+        # pass
 
 if __name__ == "__main__":
   main(sys.argv)
