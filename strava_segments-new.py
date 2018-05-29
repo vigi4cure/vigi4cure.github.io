@@ -42,7 +42,9 @@ def main(argv):
         segoutput = 'segoutput_' + argv[1] + '.csv'
 
     print('read ' + segoutput)
-    df1 = pd.read_csv(segoutput, index_col=False)
+    #skip "segment_name" since nan causes diff
+    usecols=["id","latitude","longitude","name","type","color","segment_id","url"]    
+    df1 = pd.read_csv(segoutput, index_col=False, usecols=usecols)
     df1 = df1.set_index(['segment_id'])
 
     club = 202883
@@ -122,15 +124,15 @@ def main(argv):
             segcountovertimefile.write(str(nowdate)+','+str(friend_df.loc[friend_df['shortname'] == x,'name'].values[0])+','+str(friend_df.loc[friend_df['shortname'] == x,'colour'].values[0])+','+str(friend_count_dict[x])+'\n')
     segcountovertimefile.close()
 
-    #read newly created segoutput.csv (df2) and compare it to original (df1):
-    # time.sleep(5)
-    # df2 = pd.read_csv(segoutput, index_col=False)
-    # df2 = df2.set_index(['segment_id'])
-    # try:
-        # main_logger(df2, df1, timeframe)
-    # except Exception as e:
-        # print('Error: ', str(e))
-        # pass
+    # read newly created segoutput.csv (df2) and compare it to original (df1):
+    time.sleep(5)
+    df2 = pd.read_csv(segoutput, index_col=False, usecols=usecols)
+    df2 = df2.set_index(['segment_id'])
+    try:
+        main_logger(df2, df1, timeframe)
+    except Exception as e:
+        print('Error: ', str(e))
+        pass
 
 if __name__ == "__main__":
   main(sys.argv)
