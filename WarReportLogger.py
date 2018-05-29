@@ -23,8 +23,15 @@ def main_logger(df2, df1, timeframe = None):
     changed_df2 = changed_df.unstack()
     # its making some sort of multi-index array but I can't figure out how to slice or work with the data.  Un stack atleast gets
     # it back into a form I can work with but this seems very inefficient, need to figure out how to work with multi-index df
-    print(changed_df2)
+    # print(changed_df2)
 
+    bot = 'Strava-bot'
+    icon = 'http://vigi4cure.github.io/bot.png'
+    init('shtest003', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
+    if len(changed_df2) == 0:
+        postmessage('no change', icon, bot)
+        print('no change')
+        return
 
     changed_from2 = changed_df2['from']['type']
     changed_to2 = changed_df2['to']['type']
@@ -85,11 +92,7 @@ def main_logger(df2, df1, timeframe = None):
             logfile.write(line + '\n')
     logfile.close()
 
-    bot = 'Strava-bot'
-    icon = 'http://vigi4cure.github.io/bot.png'
-    if title != '':
-        init('shtest003', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
-        postmessage(title, icon, bot)
+    postmessage(title, icon, bot)
 
 if __name__ == "__main__":
   main()
