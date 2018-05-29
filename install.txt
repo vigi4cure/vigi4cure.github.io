@@ -41,3 +41,7 @@ Feel free to give it all a try and let me know if you hit any roadblocks and I'd
 
 See you on the leaderboard!!!!
 
+
+https://www.strava.com/segment_efforts/
+,
+efforts = client.get_segment_efforts(4357415,start_date_local = "2012-12-23T00:00:00Z",end_date_local   = "2012-12-23T11:00:00Z",)
