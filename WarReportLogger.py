@@ -28,9 +28,9 @@ def main_logger(df2, df1, timeframe = None):
     bot = 'Strava-bot'
     icon = 'http://vigi4cure.github.io/bot.png'
     # init('shtest003', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
-    init('Warlords', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
     if len(changed_df2) == 0:
-        postmessage('no change', icon, bot)
+        # init('Warlords', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
+        # postmessage('no change', icon, bot)
         print('no change')
         return
 
@@ -93,6 +93,7 @@ def main_logger(df2, df1, timeframe = None):
             logfile.write(line + '\n')
     logfile.close()
 
+    init('Warlords', '61r88z7o9tn6tph1sypfim3joy', '1hrzxecjjfgbfxdfcch8mhb45y')
     postmessage(title, icon, bot)
 
 if __name__ == "__main__":
