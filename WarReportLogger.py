@@ -7,7 +7,6 @@ import pandas as pd
 from mm_bot import *
 from collections import defaultdict
 
-
 def main_logger(df2, df1, timeframe = None):
     now = datetime.datetime.now()
 
