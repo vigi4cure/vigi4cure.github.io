@@ -5,7 +5,7 @@ import re
 from bs4 import BeautifulSoup
 import datetime
 import pandas as pd
-# import time
+import time
 import requests
 
 def fetch_data(row,now):
@@ -43,16 +43,23 @@ def cleanconvert(elevation_gain_raw):
     elevation_gain_raw = round(elevation_gain_raw,0)
     return(elevation_gain_raw)
 
-        
+
 def main():
-    friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)   
+    friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)
     now = datetime.datetime.now().strftime('%Y-%m-%d')
     outputlist = []
-    
+
     #should try to redo this using apply:
-    for index,row in friend_df.iterrows():        
-        outputlist.append(fetch_data(row,now))
-    
+    for index,row in friend_df.iterrows():
+        retry_count = 3
+        while retry_count > 0:
+            retry_count = retry_count - 1
+            try:
+                outputlist.append(fetch_data(row,now))
+                break
+            except:
+                time.sleep(1)
+
     outfile = 'elevation_gain_' + str(datetime.datetime.now().year) + '.csv'
     with open(outfile, 'a+') as f:
         f.write('\n'.join(outputlist) + '\n')

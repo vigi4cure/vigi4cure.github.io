@@ -1,7 +1,3 @@
-Hey Frank, Yibing,
-
-Sasha tells me you're stepping up to take over Warlords!  Excellent - may the mayham continue!
-
 I've cleaned up the code somewhat (though much clean up, improvements remain).  You can download/fork from:
 
 https://github.com/Josh2K/Josh2K.github.io
