@@ -43,21 +43,27 @@ def cleanconvert(friend_distance_raw):
     friend_distance_raw = round(friend_distance_raw,0)
     return(friend_distance_raw)
 
-        
+
 def main():
-    friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)   
+    friend_df = pd.read_csv('friend_colour_new.csv',index_col=False)
     now = datetime.datetime.now().strftime('%Y-%m-%d')
     outputlist = []
-    
+
     #should try to redo this using apply:
-    for index,row in friend_df.iterrows():        
-        outputlist.append(fetch_data(row,now))
-       
-    
+    for index,row in friend_df.iterrows():
+        retry_count = 3
+        while retry_count > 0:
+            retry_count = retry_count - 1
+            try:
+                outputlist.append(fetch_data(row,now))
+                break
+            except:
+                time.sleep(1)
+
     outfile = open('distance_' + str(datetime.datetime.now().year) + '.csv', 'a+')
     for s in outputlist:
         outfile.write(s)
-        
+
         outfile.write('\n')
     print(str(now), '  :  ACTION:    new data added to ', outfile.name)
     outfile.close()
