@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import json, csv, time
+import json, csv, time, sys
 from collections import defaultdict
 
 def json_convert(csv_file):
@@ -56,7 +56,7 @@ def json_convert(csv_file):
 
         
 def main():
-    json_convert('distance2017.csv')
+    json_convert(sys.argv[1])
            
 
 if __name__ == "__main__":
