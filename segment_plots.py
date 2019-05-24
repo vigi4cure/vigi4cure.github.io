@@ -8,9 +8,9 @@ from datetime import datetime
 def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):  
     cat_list = df[colour].unique()
     cat_list = sorted(cat_list) #, reverse=True)
-    year = ''
+    # year = ''
+    year = '_' + str(datetime.now().year)
     if filename == 'distance' or filename == 'elevation_gain':
-        year = '_' + str(datetime.now().year)
         cat_list.remove('UNCLAIMED')
     
     data=[]
@@ -62,8 +62,8 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
     )
 
     fig = go.Figure(data=data, layout=layout)
-    
-    plotly.offline.plot(fig, filename=filename+'_plot' + year + '.html',auto_open=False)
+    print(filename+'_plot' + year + '.html')
+    plotly.offline.plot(fig, filename=filename+'_plot' + year + '.html', auto_open=False)
     return
 
 def Bar_Plot(df,colour,x_axis,y_axis,mode,display,fill,filename):  
