@@ -1,3 +1,4 @@
+datetime,name,elevation gain,sport
 2019-01-01,Marc Devlin,0,🚲
 2019-01-01,Yibing Wen,0,🚲
 2019-01-01,Arvind Ramanathan,0,🚲
@@ -2915,6 +2916,7 @@
 2019-03-12,Mike Sants,0,🚲
 2019-03-12,Jie Yu,0,🚲
 2019-03-12,Thad Murillo,773.0,🚲
+
 
 
 

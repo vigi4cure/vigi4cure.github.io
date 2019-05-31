@@ -4,6 +4,7 @@ import plotly
 import plotly.graph_objs as go
 import pandas as pd
 from datetime import datetime 
+import sys
 
 def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):  
     cat_list = df[colour].unique()
@@ -11,8 +12,11 @@ def Scatter_Plot2(df,colour,x_axis,y_axis,mode,display,fill,filename):
     # year = ''
     year = '_' + str(datetime.now().year)
     if filename == 'distance' or filename == 'elevation_gain':
-        cat_list.remove('UNCLAIMED')
-    
+        try:
+            cat_list.remove('UNCLAIMED')
+        except:
+            pass
+
     data=[]
     for item in cat_list:
         x=df.loc[df[colour] == item][x_axis]
